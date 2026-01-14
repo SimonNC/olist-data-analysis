@@ -1,8 +1,12 @@
 
 notes.txt
 # Power BI autosave & cache
-*.pbi*
-**/.pbi*
+# Power BI autosave / temporary files (do NOT ignore .pbip / .pbix)
+*.pbi.tmp
+*.pbi.lock
+*.pbi.backup
+**/.pbi/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
