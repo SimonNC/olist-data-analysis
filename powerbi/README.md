@@ -1,3 +1,8 @@
+### Data source configuration
+The dashboard uses a single Power BI parameter `DataFolder`.
+Update this parameter to point to the local `data_cleaned/` directory before refreshing the model.
+
+
 ## Power BI Dashboard
 
 ### Pages

@@ -1,0 +1,39 @@
+table d_products
+	lineageTag: 838d82b3-e076-4f51-974d-d0c6729a1477
+
+	column product_id
+		dataType: string
+		lineageTag: a0c88054-9a63-4b16-ade8-6eaac3873c83
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category_name
+		dataType: string
+		lineageTag: e602ca40-5062-405b-94a2-f2155bfda7df
+		summarizeBy: none
+		sourceColumn: product_category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_products = m
+		mode: import
+		source =
+				let
+				    Source = _DataFolder,
+				    Filtered = Table.SelectRows(
+				        Source,
+				        each [Name] = "products_clean.parquet"
+				    ),
+				    Content = Filtered{0}[Content],
+				    Products = Parquet.Document(Content)
+				in
+				    Products
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

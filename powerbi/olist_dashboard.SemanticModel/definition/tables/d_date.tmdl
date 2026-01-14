@@ -1,0 +1,72 @@
+table d_date
+	lineageTag: 1496157c-c7c0-47c3-89a8-e597dfa90eee
+
+	column Date
+		formatString: General Date
+		lineageTag: 2a08dcfd-1b19-4991-8a7f-059a696493b9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: d8f0f8ea-9313-4f89-a128-224ef024ac2a
+			defaultHierarchy: LocalDateTable_262b98ae-a3fe-4044-b02d-ce27c068268c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 33d41e4d-1456-47b8-b130-e25e5aa0ed09
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: c504c138-9c5c-43af-b780-aa4bf0fe5080
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		formatString: 0
+		lineageTag: 2ca30814-e565-47f2-9d22-9153f9823e9b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MonthNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: ffb9966b-9cf2-4a8b-b4c5-22530e31bc50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_date = calculated
+		mode: import
+		source = ```
+				
+				VAR min_date =
+				    MINX ( f_orders, f_orders[order_purchase_timestamp] )
+				VAR max_date =
+				    MAXX ( f_orders, f_orders[order_purchase_timestamp] )
+				RETURN
+				ADDCOLUMNS (
+				    CALENDAR ( DATE ( YEAR ( min_date ), MONTH ( min_date ), 1 ), max_date ),
+				    "Year", YEAR ( [Date] ),
+				    "Month", FORMAT ( [Date], "MMM" ),
+				    "MonthNum", MONTH ( [Date] ),
+				    "YearMonth", FORMAT ( [Date], "YYYY-MM" )
+				)
+				
+				```
+
+	annotation PBI_Id = e5557423f0a547e5bc329ed00212538e
+

@@ -1,0 +1,39 @@
+relationship 1482e170-b937-4cca-aff1-8e60a4e7f0af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_orders.order_delivered_customer_date
+	toColumn: LocalDateTable_6843d2a9-dbf1-42b4-9146-6b948c3e9d6e.Date
+
+relationship 8148d8b6-f21c-421e-a141-3851e4aaa0a7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: f_orders.order_estimated_delivery_date
+	toColumn: LocalDateTable_9eba8f5b-9514-4dfa-8620-a5d8b57019b2.Date
+
+relationship AutoDetected_84adc710-573a-4990-a291-36011fcefbc0
+	fromColumn: f_order_items.order_id
+	toColumn: f_orders.order_id
+
+relationship AutoDetected_5300d6b3-02f1-49ed-8ad0-3870b765f730
+	fromColumn: f_reviews.order_id
+	toColumn: f_orders.order_id
+
+relationship AutoDetected_fd84f730-ad2a-4908-8b24-5321e9f09a14
+	fromColumn: f_order_items.product_id
+	toColumn: d_products.product_id
+
+relationship 30b0b445-7213-2c29-76c0-43302f871d5e
+	fromColumn: f_orders.customer_id
+	toColumn: d_customers.customer_id
+
+relationship 26b9b39d-e89e-cf69-3cdf-fd107782a1a9
+	fromColumn: d_products.product_category_name
+	toColumn: d_category_translation.category_portuguese
+
+relationship d8f0f8ea-9313-4f89-a128-224ef024ac2a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: d_date.Date
+	toColumn: LocalDateTable_262b98ae-a3fe-4044-b02d-ce27c068268c.Date
+
+relationship 52728bd6-87e1-a0bc-ec36-6b446849c10b
+	fromColumn: f_orders.order_purchase_timestamp
+	toColumn: d_date.Date
+
