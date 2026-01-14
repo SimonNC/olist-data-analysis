@@ -62,6 +62,25 @@ table f_orders
 
 		annotation SummarizationSetBy = Automatic
 
+	column purchase_date = ```
+			
+			DATE (
+			    YEAR ( f_orders[order_purchase_timestamp] ),
+			    MONTH ( f_orders[order_purchase_timestamp] ),
+			    DAY ( f_orders[order_purchase_timestamp] )
+			)
+			
+			```
+		formatString: Long Date
+		lineageTag: 30a0c742-3b9e-48e1-a528-19c3ca13eddb
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
 	partition f_orders = m
 		mode: import
 		source =
