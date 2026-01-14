@@ -1,0 +1,45 @@
+table d_customers
+	lineageTag: 914bfdef-bc3c-46ec-ab70-978e829d1adb
+
+	column customer_id
+		dataType: string
+		lineageTag: 47325717-f6c9-4047-a6b1-415097b8698e
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_state
+		dataType: string
+		lineageTag: 6b25878e-e96f-4d60-b6a8-3dda15d59d49
+		summarizeBy: none
+		sourceColumn: customer_state
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_customers = m
+		mode: import
+		source =
+				let
+				    Source = _DataFolder,
+				    Filtered = Table.SelectRows(
+				        Source,
+				        each [Name] = "customers_clean.parquet"
+				    ),
+				    Content = Filtered{0}[Content],
+				    Customers = Parquet.Document(Content)
+				in
+				    Customers
+
+	changedProperty = IsHidden
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

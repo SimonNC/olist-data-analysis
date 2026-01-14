@@ -1,0 +1,19 @@
+/// Path to data_cleaned folder
+expression DataFolder = "C:\sandbox\Data\olist-ecommerce\data_cleaned\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 43081bc5-178b-4e48-86b4-3db05718c8da
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _DataFolder =
+		let
+		    Source = Folder.Files(DataFolder)
+		in
+		    Source
+	lineageTag: d7ffa3fb-2fdb-4d83-a8c0-6bdd5515e4a3
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

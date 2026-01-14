@@ -1,0 +1,40 @@
+table f_reviews
+	lineageTag: 642d5a10-06c8-4544-9c24-97249a1ce15c
+
+	column order_id
+		dataType: string
+		lineageTag: 841a84ae-e507-4d13-901b-5f67801b3dce
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 980ed8c5-2b72-452f-a74c-10b733d568a3
+		summarizeBy: sum
+		sourceColumn: review_score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition f_reviews = m
+		mode: import
+		source =
+				let
+				    Source = _DataFolder,
+				    Filtered = Table.SelectRows(
+				        Source,
+				        each [Name] = "reviews_clean.parquet"
+				    ),
+				    Content = Filtered{0}[Content],
+				    Reviews = Parquet.Document(Content)
+				in
+				    Reviews
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

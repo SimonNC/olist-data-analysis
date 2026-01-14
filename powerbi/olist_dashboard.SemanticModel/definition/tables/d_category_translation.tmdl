@@ -1,0 +1,39 @@
+table d_category_translation
+	lineageTag: 7291bf81-2a96-47b6-983a-f231c82d4d64
+
+	column category_portuguese
+		dataType: string
+		lineageTag: 0c70035f-e762-45e8-88b0-c6bf491aeedf
+		summarizeBy: none
+		sourceColumn: category_portuguese
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_english
+		dataType: string
+		lineageTag: 0f9f0acd-d5eb-46ed-aa56-180e5b51ece6
+		summarizeBy: none
+		sourceColumn: category_english
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_category_translation = m
+		mode: import
+		source =
+				let
+				    Source = _DataFolder,
+				    Filtered = Table.SelectRows(
+				        Source,
+				        each [Name] = "translation_clean.parquet"
+				    ),
+				    Content = Filtered{0}[Content],
+				    CategoryTranslation = Parquet.Document(Content)
+				in
+				    CategoryTranslation
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

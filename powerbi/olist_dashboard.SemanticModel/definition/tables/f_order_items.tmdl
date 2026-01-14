@@ -1,0 +1,60 @@
+table f_order_items
+	lineageTag: 7bfa9ea3-2e3c-495b-a65c-03fe8a178f4f
+
+	column order_id
+		dataType: string
+		lineageTag: d1238d2e-da34-4e29-ab82-ca224566377c
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 7f259f7c-3a7e-41b9-929f-19695db78c01
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		lineageTag: f4933c25-b4f0-4f55-aa6b-f563f8105ed7
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: double
+		lineageTag: 25ee508f-75f0-4f46-82f6-e7449a847386
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition f_order_items = m
+		mode: import
+		source =
+				let
+				    Source = _DataFolder,
+				    Filtered = Table.SelectRows(
+				        Source,
+				        each [Name] = "order_items_clean.parquet"
+				    ),
+				    Content = Filtered{0}[Content],
+				    OrderItems = Parquet.Document(Content),
+				    #"Changed Type" = Table.TransformColumnTypes(OrderItems,{{"price", type number}, {"freight_value", type number}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

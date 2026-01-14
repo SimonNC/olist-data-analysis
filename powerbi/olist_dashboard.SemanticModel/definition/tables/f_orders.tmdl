@@ -1,0 +1,84 @@
+table f_orders
+	lineageTag: d2abce02-9af1-4e7a-89df-877487866412
+
+	column order_id
+		dataType: string
+		lineageTag: b5c45025-ae10-459f-bf6c-bb3e90a6de24
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 3eed3938-39f9-466f-8091-e68e8784a3c4
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		lineageTag: 00d744be-9c2b-459d-9194-6ffa9dde578f
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a45842be-e07f-4aa2-a459-c3525502ecd3
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_customer_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1a1d5548-a8e8-4ef4-83f7-c47cc0f18833
+		summarizeBy: none
+		sourceColumn: order_delivered_customer_date
+
+		variation Variation
+			isDefault
+			relationship: 1482e170-b937-4cca-aff1-8e60a4e7f0af
+			defaultHierarchy: LocalDateTable_6843d2a9-dbf1-42b4-9146-6b948c3e9d6e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_estimated_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0cdaaf52-85ce-4de0-b130-f0842b376b11
+		summarizeBy: none
+		sourceColumn: order_estimated_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: 8148d8b6-f21c-421e-a141-3851e4aaa0a7
+			defaultHierarchy: LocalDateTable_9eba8f5b-9514-4dfa-8620-a5d8b57019b2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition f_orders = m
+		mode: import
+		source =
+				let
+				    Source = _DataFolder,
+				    Filtered = Table.SelectRows(
+				        Source,
+				        each [Name] = "orders_clean.parquet"
+				    ),
+				    Content = Filtered{0}[Content],
+				    Orders = Parquet.Document(Content)
+				in
+				    Orders
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
