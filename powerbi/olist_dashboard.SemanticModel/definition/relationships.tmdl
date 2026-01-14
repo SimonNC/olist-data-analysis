@@ -28,12 +28,12 @@ relationship 26b9b39d-e89e-cf69-3cdf-fd107782a1a9
 	fromColumn: d_products.product_category_name
 	toColumn: d_category_translation.category_portuguese
 
-relationship d8f0f8ea-9313-4f89-a128-224ef024ac2a
-	joinOnDateBehavior: datePartOnly
-	fromColumn: d_date.Date
-	toColumn: LocalDateTable_262b98ae-a3fe-4044-b02d-ce27c068268c.Date
-
 relationship 52728bd6-87e1-a0bc-ec36-6b446849c10b
+	isActive: false
 	fromColumn: f_orders.order_purchase_timestamp
+	toColumn: d_date.Date
+
+relationship 1e96f973-3554-b930-5610-20d5debe78f2
+	fromColumn: f_orders.purchase_date
 	toColumn: d_date.Date
 

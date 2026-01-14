@@ -1,0 +1,134 @@
+table _measures
+	lineageTag: fe3edaca-7c07-4f27-99c3-2ddf28ba8f61
+
+	measure 'Total Orders' = ```
+			DISTINCTCOUNT ( f_orders[order_id] )
+			
+			
+			```
+		formatString: 0
+		lineageTag: 32d97663-b238-4aee-86b3-073c0446c0fd
+
+	measure 'Total Revenue' = ```
+			SUM ( f_order_items[price] )
+			
+			```
+		lineageTag: b6d994bf-34da-47b5-bf97-ad19f44edefc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Freight' = ```
+			SUM ( f_order_items[freight_value] )
+			
+			```
+		lineageTag: a7c151a6-4fcf-4bca-aa76-01935e2898fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AOV = ```
+			DIVIDE ( [Total Revenue], [Total Orders] )
+			
+			```
+		lineageTag: 4e2765a9-ce2d-427d-a955-e988b9843902
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Delivered Orders' = ```
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( f_orders[order_id] ),
+			    f_orders[order_status] = "delivered"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: e3aa53a8-239a-442a-975b-a70ff7c2a4af
+
+	measure 'Avg Delivery Days' = ```
+			
+			AVERAGEX (
+			    FILTER (
+			        f_orders,
+			        f_orders[order_status] = "delivered"
+			            && NOT ISBLANK ( f_orders[order_delivered_customer_date] )
+			            && NOT ISBLANK ( f_orders[order_purchase_timestamp] )
+			    ),
+			    DATEDIFF (
+			        f_orders[order_purchase_timestamp],
+			        f_orders[order_delivered_customer_date],
+			        DAY
+			    )
+			)
+			
+			```
+		lineageTag: bda32d8b-fe7f-4ed6-a690-be7436825b4c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'On-Time Delivery %' = ```
+			
+			VAR Delivered =
+			    FILTER (
+			        f_orders,
+			        f_orders[order_status] = "delivered"
+			            && NOT ISBLANK ( f_orders[order_delivered_customer_date] )
+			            && NOT ISBLANK ( f_orders[order_estimated_delivery_date] )
+			    )
+			VAR OnTimeCount =
+			    COUNTROWS (
+			        FILTER (
+			            Delivered,
+			            f_orders[order_delivered_customer_date] <= f_orders[order_estimated_delivery_date]
+			        )
+			    )
+			VAR DeliveredCount =
+			    COUNTROWS ( Delivered )
+			RETURN
+			DIVIDE ( OnTimeCount, DeliveredCount )
+			
+			```
+		lineageTag: 76034799-d6cc-4bb0-aeb9-788f96879461
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Reviews' = ```
+			
+			COUNTROWS ( f_reviews )
+			
+			```
+		formatString: 0
+		lineageTag: 7684a3aa-6990-4756-99d1-852b809d9068
+
+	measure 'Avg Review Score' = ```
+			
+			AVERAGE ( f_reviews[review_score] )
+			
+			```
+		lineageTag: 38329cda-cc9a-479f-8a6e-f08d6cc0999b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Low Reviews %' = ```
+			
+			DIVIDE (
+			    CALCULATE ( COUNTROWS ( f_reviews ), f_reviews[review_score] <= 2 ),
+			    [Total Reviews]
+			)
+			
+			```
+		lineageTag: d21fc38d-f4ed-489d-9a9e-de8ca4f68767
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WqlCKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [MeasureTable = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"MeasureTable", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"MeasureTable"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
