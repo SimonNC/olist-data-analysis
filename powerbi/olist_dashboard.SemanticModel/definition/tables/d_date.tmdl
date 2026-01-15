@@ -60,6 +60,15 @@ table d_date
 
 		annotation SummarizationSetBy = Automatic
 
+	column MonthYear
+		lineageTag: 4db8335d-8e27-4036-a9b5-f2446f828605
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthYear]
+		sortByColumn: YearMonthSort
+
+		annotation SummarizationSetBy = Automatic
+
 	partition d_date = calculated
 		mode: import
 		source = ```
@@ -74,6 +83,7 @@ table d_date
 				    "Year", YEAR ( [Date] ),
 				    "Month", FORMAT ( [Date], "MMM" ),
 				    "MonthNum", MONTH ( [Date] ),
+				    "MonthYear", FORMAT ( [Date], "MMM YYYY" ),
 				    "YearMonth", FORMAT ( [Date], "YYYY-MM" )
 				)
 				
