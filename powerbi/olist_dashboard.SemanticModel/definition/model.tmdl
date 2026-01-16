@@ -23,6 +23,7 @@ ref table d_category_translation
 ref table f_reviews
 ref table d_date
 ref table _measures
+ref table d_delivery_days
 
 ref cultureInfo en-US
 

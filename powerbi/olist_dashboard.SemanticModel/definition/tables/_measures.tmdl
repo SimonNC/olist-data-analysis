@@ -147,6 +147,133 @@ table _measures
 
 		changedProperty = IsHidden
 
+	measure 'Delivered Orders (SLA)' = ```
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( f_orders[order_id] ),
+			    f_orders[order_status] = "delivered",
+			    NOT ISBLANK ( f_orders[delivery_sla_bucket] )
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Delivery
+		lineageTag: d5294356-57d7-4fa9-bb63-50818926a49d
+
+	measure 'Delivered Orders (for CDF)' = ```
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( f_orders[order_id] ),
+			    f_orders[order_status] = "delivered",
+			    NOT ISBLANK ( f_orders[delivery_days] )
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Delivery\CDF
+		lineageTag: 36c1e4e8-ba45-4663-9681-913ca8a94bc6
+
+	measure 'Delivered Orders ≤ Day' = ```
+			
+			VAR MaxDay = MAX ( d_delivery_days[DeliveryDay] )
+			RETURN
+			CALCULATE (
+			    DISTINCTCOUNT ( f_orders[order_id] ),
+			    f_orders[order_status] = "delivered",
+			    NOT ISBLANK ( f_orders[delivery_days] ),
+			    f_orders[delivery_days] <= MaxDay
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Delivery
+		lineageTag: 95593bfe-d7fe-4368-b922-83d0bf51a8b2
+
+	measure 'Delivery CDF %' = ```
+			
+			DIVIDE ( [Delivered Orders ≤ Day], [Delivered Orders (for CDF)] )
+			
+			```
+		formatString: 0\ %;-0\ %;0\ %
+		displayFolder: Delivery\CDF
+		lineageTag: ee8be3d9-591e-44c1-8bcb-c008e30b0b72
+
+	measure 'Delivered ≤ 7d %' = ```
+			
+			VAR sla = 7
+			RETURN
+			DIVIDE (
+			    CALCULATE (
+			        DISTINCTCOUNT ( f_orders[order_id] ),
+			        f_orders[order_status] = "delivered",
+			        NOT ISBLANK ( f_orders[delivery_days] ),
+			        f_orders[delivery_days] <= sla
+			    ),
+			    [Delivered Orders (for CDF)]
+			)
+			
+			```
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: Delivery\CDF
+		lineageTag: 64ad8d1f-ecf7-48b1-be65-e2a5801a9a80
+
+	measure 'Delivered ≤ 15d %' = ```
+			
+			VAR sla = 15
+			RETURN
+			DIVIDE (
+			    CALCULATE (
+			        DISTINCTCOUNT ( f_orders[order_id] ),
+			        f_orders[order_status] = "delivered",
+			        NOT ISBLANK ( f_orders[delivery_days] ),
+			        f_orders[delivery_days] <= sla
+			    ),
+			    [Delivered Orders (for CDF)]
+			)
+			
+			```
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: Delivery\CDF
+		lineageTag: 3a4e1c01-3193-4c8d-afa0-31960b85ee17
+
+	measure 'Delivered ≤ 30d %' = ```
+			
+			VAR sla = 30
+			RETURN
+			DIVIDE (
+			    CALCULATE (
+			        DISTINCTCOUNT ( f_orders[order_id] ),
+			        f_orders[order_status] = "delivered",
+			        NOT ISBLANK ( f_orders[delivery_days] ),
+			        f_orders[delivery_days] <= sla
+			    ),
+			    [Delivered Orders (for CDF)]
+			)
+			
+			```
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: Delivery\CDF
+		lineageTag: 9f4d1adb-ee57-4cd0-b9a1-bb738562ab37
+
+	measure 'Delivered > 30d %' = ```
+			
+			VAR sla = 30
+			RETURN
+			DIVIDE (
+			    CALCULATE (
+			        DISTINCTCOUNT ( f_orders[order_id] ),
+			        f_orders[order_status] = "delivered",
+			        NOT ISBLANK ( f_orders[delivery_days] ),
+			        f_orders[delivery_days] > sla
+			    ),
+			    [Delivered Orders (for CDF)]
+			)
+			
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Delivery\CDF
+		lineageTag: 2020153b-2b80-4268-8f13-a6dc9c5f982e
+
 	partition _measures = m
 		mode: import
 		source =

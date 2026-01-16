@@ -81,6 +81,69 @@ table f_orders
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column delivery_days = ```
+			
+			IF (
+			    f_orders[order_status] = "delivered"
+			        && NOT ISBLANK ( f_orders[order_delivered_customer_date] )
+			        && NOT ISBLANK ( f_orders[order_purchase_timestamp] ),
+			    DATEDIFF (
+			        f_orders[order_purchase_timestamp],
+			        f_orders[order_delivered_customer_date],
+			        DAY
+			    ),
+			    BLANK()
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 61e1f50f-9f11-4b98-a500-05b7a161808f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_sla_bucket = ```
+			
+			VAR d = f_orders[delivery_days]
+			RETURN
+			SWITCH (
+			    TRUE(),
+			    ISBLANK ( d ), BLANK(),
+			    d <= 7, "≤ 7 days",
+			    d <= 15, "8–15 days",
+			    d <= 30, "16–30 days",
+			    "> 30 days"
+			)
+			
+			```
+		lineageTag: 5e803e42-9000-472d-bbc9-82cadc90efac
+		summarizeBy: none
+		sortByColumn: delivery_sla_sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_sla_sort = ```
+			
+			VAR d = f_orders[delivery_days]
+			RETURN
+			SWITCH (
+			    TRUE(),
+			    ISBLANK ( d ), BLANK(),
+			    d <= 7, 1,
+			    d <= 15, 2,
+			    d <= 30, 3,
+			    4
+			)
+			
+			```
+		formatString: 0
+		lineageTag: bac8416d-fed5-42f3-81af-db6426afb122
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition f_orders = m
 		mode: import
 		source =
