@@ -116,8 +116,8 @@ table _measures
 			COUNTROWS ( f_reviews )
 			
 			```
-		formatString: 0
-		displayFolder: Reviews
+		formatString: #,0
+		displayFolder: Reviews\Core
 		lineageTag: 7684a3aa-6990-4756-99d1-852b809d9068
 
 		changedProperty = IsHidden
@@ -128,7 +128,7 @@ table _measures
 			
 			```
 		formatString: 0.00
-		displayFolder: Reviews
+		displayFolder: Reviews\Core
 		lineageTag: 38329cda-cc9a-479f-8a6e-f08d6cc0999b
 
 		changedProperty = IsHidden
@@ -142,7 +142,7 @@ table _measures
 			
 			```
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
-		displayFolder: Reviews
+		displayFolder: Reviews\Core
 		lineageTag: d21fc38d-f4ed-489d-9a9e-de8ca4f68767
 
 		changedProperty = IsHidden
@@ -273,6 +273,157 @@ table _measures
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		displayFolder: Delivery\CDF
 		lineageTag: 2020153b-2b80-4268-8f13-a6dc9c5f982e
+
+	measure 'Positive Reviews' = ```
+			
+			CALCULATE ( [Total Reviews], f_reviews[review_score] IN { 4, 5 } )
+			
+			```
+		formatString: 0
+		displayFolder: Reviews\Core
+		lineageTag: ded0dbfa-f886-47cc-a369-6f16ff066c85
+
+	measure 'Positive Reviews %' = ```
+			
+			DIVIDE ( [Positive Reviews], [Total Reviews] )
+			
+			```
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: Reviews\Core
+		lineageTag: 1a403037-3f20-4ffc-9465-2fe8b365adfd
+
+	measure 'Negative Reviews' =
+			
+			CALCULATE ( [Total Reviews], f_reviews[review_score] IN { 1, 2 } )
+		formatString: 0
+		displayFolder: Reviews\Core
+		lineageTag: 6949b24f-8600-4d34-8dae-c8337ab0101f
+
+	measure 'Negative Reviews %' = ```
+			
+			DIVIDE ( [Negative Reviews], [Total Reviews] )
+			
+			```
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: Reviews\Core
+		lineageTag: 4bba8bf0-9efa-42d9-aafc-33f711b1bee7
+
+	measure 'Avg Review (≤ 30d)' = ```
+			
+			CALCULATE (
+			    [Avg Review Score],
+			    FILTER (
+			        f_orders,
+			        NOT ISBLANK ( f_orders[delivery_days] )
+			            && f_orders[delivery_days] <= 30
+			    )
+			)
+			
+			```
+		displayFolder: Reviews\Delivery Impact
+		lineageTag: fb3c2900-935a-450a-82da-b43b252f7260
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Review (> 30d)' = ```
+			
+			CALCULATE (
+			    [Avg Review Score],
+			    FILTER (
+			        f_orders,
+			        NOT ISBLANK ( f_orders[delivery_days] )
+			            && f_orders[delivery_days] > 30
+			    )
+			)
+			
+			
+			```
+		displayFolder: Reviews\Delivery Impact
+		lineageTag: 303c5944-584a-4245-a221-25f970e78553
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Review Gap (>30d vs ≤30d)' = ```
+			
+			[Avg Review (> 30d)] - [Avg Review (≤ 30d)]
+			
+			```
+		displayFolder: Reviews\Delivery Impact
+		lineageTag: 13086717-6a7e-4661-aedb-15410c34ec9f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Delivery Days (Reviewed)' = ```
+			
+			AVERAGEX (
+			    VALUES ( f_reviews[order_id] ),
+			    CALCULATE ( MAX ( f_orders[delivery_days] ) )
+			)
+			
+			```
+		displayFolder: Reviews\Helper
+		lineageTag: 37abd756-486c-458a-91d7-42b67be73ad2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Neutral Reviews' = ```
+			
+			CALCULATE ( [Total Reviews], f_reviews[review_score] = 3 )
+			
+			```
+		formatString: #,0
+		displayFolder: Reviews\Core
+		lineageTag: f94cafc0-5504-48dc-96f4-63c96139f325
+
+	measure 'Neutral Reviews %' = ```
+			
+			DIVIDE ( [Neutral Reviews], [Total Reviews] )
+			
+			```
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: Reviews\Core
+		lineageTag: fba313e3-51e2-40a0-9897-ff6036c2ae36
+
+	measure 'Reviews Mix Check %' = ```
+			
+			[Positive Reviews %] + [Neutral Reviews %] + [Negative Reviews %]
+			
+			```
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: Reviews\Core
+		lineageTag: 4c754bff-8148-4bcc-b91f-32572e86e385
+
+	measure 'Positive Reviews (Count)' = [Positive Reviews]
+		formatString: #,0
+		displayFolder: Reviews\Core
+		lineageTag: ca9b1f11-47dc-4f22-9797-1f9723335adb
+
+	measure 'Neutral Reviews (Count)' = [Neutral Reviews]
+		formatString: #,0
+		displayFolder: Reviews\Core
+		lineageTag: 51f1ae33-0125-4502-98b6-cb91d957ee79
+
+	measure 'Negative Reviews (Count)' = [Negative Reviews]
+		formatString: #,0
+		displayFolder: Reviews\Core
+		lineageTag: 64246fe6-54a0-4be3-86f2-dfbf4d48fe32
+
+	measure 'Reviews by Type' = ```
+			
+			VAR rt = SELECTEDVALUE ( d_review_type[Review Type] )
+			RETURN
+			SWITCH (
+			    rt,
+			    "Negative (1–2)", CALCULATE ( [Total Reviews], f_reviews[review_score] IN { 1, 2 } ),
+			    "Neutral (3)",    CALCULATE ( [Total Reviews], f_reviews[review_score] = 3 ),
+			    "Positive (4–5)", CALCULATE ( [Total Reviews], f_reviews[review_score] IN { 4, 5 } ),
+			    BLANK()
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Reviews\Delivery Impact
+		lineageTag: fac91068-246c-4933-9189-5f8f846b781e
 
 	partition _measures = m
 		mode: import

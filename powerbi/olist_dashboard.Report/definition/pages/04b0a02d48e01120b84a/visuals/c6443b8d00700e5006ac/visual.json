@@ -73,7 +73,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 3,
+                      "ColorId": 5,
                       "Percent": 0
                     }
                   }
@@ -232,23 +232,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "38e86cd09d7d5aad41a8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Delivered Orders"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

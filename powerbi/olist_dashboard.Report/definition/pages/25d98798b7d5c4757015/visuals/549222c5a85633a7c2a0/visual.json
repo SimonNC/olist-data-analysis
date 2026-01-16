@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "79133331cbe7d8e2b454",
+  "name": "549222c5a85633a7c2a0",
   "position": {
-    "x": 25,
-    "y": 99,
+    "x": 12.222222222222221,
+    "y": 98.888888888888886,
     "z": 1000,
-    "height": 112,
-    "width": 399,
+    "height": 112.22222222222221,
+    "width": 175.55555555555554,
     "tabOrder": 0
   },
   "visual": {
@@ -126,7 +126,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Orders'"
+                  "Value": "'Total Reviews'"
                 }
               }
             },

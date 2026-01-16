@@ -248,51 +248,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6b7c6c126bed5d412b34",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_delivery_days"
-              }
-            },
-            "Property": "DeliveryDay"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "45f19e5581a310863050",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Delivery CDF %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d7e738063aecca145a74",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Delivered Orders ≤ Day"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "dd82ee305d2a0227e0d3",
+  "name": "6c436b5ea0ba45a98bc7",
   "position": {
-    "x": 25.555555555555554,
-    "y": 467.77777777777777,
-    "z": 5000,
-    "height": 237.77777777777777,
-    "width": 398.88888888888886,
-    "tabOrder": 4000
+    "x": 12.222222222222221,
+    "y": 233.33333333333331,
+    "z": 6000,
+    "height": 218.88888888888889,
+    "width": 350,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,16 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "f_orders"
+                      "Entity": "f_reviews"
                     }
                   },
-                  "Property": "delivery_sla_bucket"
+                  "Property": "review_score"
                 }
               },
-              "queryRef": "f_orders.delivery_sla_bucket",
-              "nativeQueryRef": "SLA Delivery Category",
+              "queryRef": "f_reviews.review_score",
+              "nativeQueryRef": "Review Score",
               "active": true,
-              "displayName": "SLA Delivery Category"
+              "displayName": "Review Score"
             }
           ]
         },
@@ -43,14 +43,32 @@
                       "Entity": "_measures"
                     }
                   },
-                  "Property": "Delivered Orders (SLA)"
+                  "Property": "Total Reviews"
                 }
               },
-              "queryRef": "_measures.Delivered Orders (SLA)",
-              "nativeQueryRef": "Delivered Orders (SLA)"
+              "queryRef": "_measures.Total Reviews",
+              "nativeQueryRef": "Total Reviews"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_measures"
+                  }
+                },
+                "Property": "Total Reviews"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -75,6 +93,18 @@
       "categoryAxis": [
         {
           "properties": {
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
             "titleColor": {
               "solid": {
                 "color": {
@@ -93,18 +123,6 @@
       "valueAxis": [
         {
           "properties": {
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
             "titleColor": {
               "solid": {
                 "color": {
@@ -128,7 +146,21 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Delivered Orders by SLA Delivery Time'"
+                  "Value": "'Review Score Distribution (1–5)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             },
@@ -143,15 +175,33 @@
                   }
                 }
               }
-            },
-            "alignment": {
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'center'"
+                  "Value": "true"
                 }
               }
             },
-            "fontSize": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
               "expr": {
                 "Literal": {
                   "Value": "10D"
@@ -163,5 +213,44 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8c89df55792ca36752e7",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_measures"
+                  }
+                },
+                "Property": "Positive Reviews %"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "_measures"
+                      }
+                    },
+                    "Property": "Positive Reviews %"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      }
+    ]
   }
 }

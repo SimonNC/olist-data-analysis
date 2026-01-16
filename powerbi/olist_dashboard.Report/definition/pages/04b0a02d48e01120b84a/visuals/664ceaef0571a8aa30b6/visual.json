@@ -572,34 +572,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "98b971837c83eb58b9d9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Delivered Orders"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "44ee22b44de4b816739c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "On-Time Delivery %"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

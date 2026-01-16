@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "79133331cbe7d8e2b454",
+  "name": "cbfbe6e102a05604a00a",
   "position": {
-    "x": 25,
-    "y": 99,
-    "z": 1000,
-    "height": 112,
-    "width": 399,
-    "tabOrder": 0
+    "x": 554.44444444444446,
+    "y": 96.666666666666657,
+    "z": 3000,
+    "height": 112.22222222222221,
+    "width": 207.77777777777777,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "_measures"
                     }
                   },
-                  "Property": "Total Orders"
+                  "Property": "Positive Reviews %"
                 }
               },
-              "queryRef": "_measures.Total Orders",
-              "nativeQueryRef": "Total Orders"
+              "queryRef": "_measures.Positive Reviews %",
+              "nativeQueryRef": "Positive Reviews %"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_measures"
                   }
                 },
-                "Property": "Total Orders"
+                "Property": "Positive Reviews %"
               }
             },
             "direction": "Descending"
@@ -73,7 +73,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 5,
+                      "ColorId": 3,
                       "Percent": 0
                     }
                   }
@@ -87,24 +87,10 @@
                 }
               }
             },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
             "fontFamily": {
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -126,7 +112,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Orders'"
+                  "Value": "'Positive Reviews (4-5)'"
                 }
               }
             },
@@ -213,8 +199,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                      "ColorId": 3,
+                      "Percent": 0.6
                     }
                   }
                 }

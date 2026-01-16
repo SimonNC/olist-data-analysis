@@ -218,23 +218,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "393e3bc6406ceecc11c3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "On-Time Delivery %"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
