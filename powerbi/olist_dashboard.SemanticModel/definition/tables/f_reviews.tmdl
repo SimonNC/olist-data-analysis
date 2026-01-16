@@ -11,7 +11,7 @@ table f_reviews
 
 	column review_score
 		dataType: int64
-		formatString: 0
+		formatString: #,0
 		lineageTag: 980ed8c5-2b72-452f-a74c-10b733d568a3
 		summarizeBy: sum
 		sourceColumn: review_score
@@ -31,8 +31,6 @@ table f_reviews
 				    Reviews = Parquet.Document(Content)
 				in
 				    Reviews
-
-	changedProperty = Name
 
 	annotation PBI_NavigationStepName = Navigation
 

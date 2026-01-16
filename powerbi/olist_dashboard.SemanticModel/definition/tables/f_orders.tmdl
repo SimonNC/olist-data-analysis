@@ -144,6 +144,45 @@ table f_orders
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Delivery Days Bin Label' = ```
+			
+			VAR center = f_orders[Delivery Days Bin Center]
+			RETURN
+			FORMAT ( center - 5, "0" )
+			& "–"
+			& FORMAT ( center + 4, "0" )
+			& " days"
+			
+			
+			
+			
+			```
+		lineageTag: b2a5ae00-3de2-4eb2-8dc0-4ea68050739e
+		summarizeBy: none
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Days Bin Center' = ```
+			
+			VAR binSize = 10
+			VAR days = f_orders[delivery_days]
+			RETURN
+			IF (
+			    ISBLANK ( days ),
+			    BLANK (),
+			    binSize * INT ( days / binSize ) + ( binSize / 2 )
+			)
+			
+			```
+		lineageTag: 2268cdfd-d51f-441a-b8bf-2654a1a42090
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition f_orders = m
 		mode: import
 		source =
@@ -157,8 +196,6 @@ table f_orders
 				    Orders = Parquet.Document(Content)
 				in
 				    Orders
-
-	changedProperty = Name
 
 	annotation PBI_NavigationStepName = Navigation
 

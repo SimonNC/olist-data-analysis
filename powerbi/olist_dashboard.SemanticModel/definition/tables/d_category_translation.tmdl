@@ -31,8 +31,6 @@ table d_category_translation
 				in
 				    CategoryTranslation
 
-	changedProperty = Name
-
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table

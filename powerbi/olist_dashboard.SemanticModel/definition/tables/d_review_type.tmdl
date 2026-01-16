@@ -1,0 +1,44 @@
+table d_review_type
+	lineageTag: 79567dad-8603-4861-894a-feaa7a5061eb
+
+	column 'Review Type'
+		lineageTag: 0cc75c57-b051-4eb1-80aa-e6ede7aee2f8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Review Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder = ```
+			
+			SWITCH (
+			    d_review_type[Review Type],
+			    "Negative (1–2)", 1,
+			    "Neutral (3)", 2,
+			    "Positive (4–5)", 3
+			)
+			
+			```
+		formatString: 0
+		lineageTag: d62f8743-60f9-4d05-92ef-e7c9bcbab815
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_review_type = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "Review Type", STRING,
+				    {
+				        { "Negative (1–2)" },
+				        { "Neutral (3)" },
+				        { "Positive (4–5)" }
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 8a33197977f84f40aa3170acec8726df
+

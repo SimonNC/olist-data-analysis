@@ -125,6 +125,13 @@
                   "Value": "'PageNavigation'"
                 }
               }
+            },
+            "navigationSection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'7f64f752383ac4ae1e24'"
+                }
+              }
             }
           }
         }

@@ -1807,6 +1807,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Delivery Time (SLA)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -5859,75 +5869,1600 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.positive_reviews": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Positive Reviews"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "positive reviews": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "reviews": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "positive appraisal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "positive evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "positive assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "positive examination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "positive analysis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "positive criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "appraisal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "examination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.positive_reviews_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Positive Reviews %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "positive reviews %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "positive review percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "positive review pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.negative_reviews": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Negative Reviews"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "negative reviews": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "reviews": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "negative appraisal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "negative evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "negative assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "negative examination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "negative analysis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "negative criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "appraisal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "examination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.negative_reviews_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Negative Reviews %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "negative reviews %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "negative review percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "negative review pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.avg_review__30d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Avg Review (≤ 30d)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg review (≤ 30d)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "avg review": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.avg_review__30d1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Avg Review (> 30d)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg review (> 30d)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "avg review": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.review_gap_30d_vs_30d": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Review Gap (>30d vs ≤30d)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "review gap (>30d vs ≤30d)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "review gap": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.avg_delivery_days_reviewed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Avg Delivery Days (Reviewed)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg delivery days (reviewed)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "avg delivery days": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.neutral_reviews": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Neutral Reviews"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "neutral reviews": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "reviews": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "neutral appraisal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "neutral evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "neutral assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "neutral examination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "neutral analysis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "neutral criticism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "appraisal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "evaluation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "assessment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "examination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.neutral_reviews_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Neutral Reviews %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "neutral reviews %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "neutral review percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "neutral review pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.reviews_mix_check_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Reviews Mix Check %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "reviews mix check %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "review mix check percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "review mix check pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "review mix cheque %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "review mix checkup %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "review mix inspection %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "review mix payment %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "review mix test %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "review mix tick %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "review mix bill %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "review mix safety inspection %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.494
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.positive_reviews_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Positive Reviews (Count)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "positive reviews (count)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "positive reviews": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "positive review ( amount )": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.neutral_reviews_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Neutral Reviews (Count)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "neutral reviews (count)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "neutral reviews": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "neutral review ( amount )": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.negative_reviews_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Negative Reviews (Count)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "negative reviews (count)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "negative reviews": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "negative review ( amount )": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.reviews_by_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_measures",
+			          "ConceptualProperty": "Reviews by Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "reviews by type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "reviews": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "review by category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "review by genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "review by manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "review by variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "review by brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "review by class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "review by kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "review by style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "review by form": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "review by grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "Review Share (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "d_review_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_review_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "d review type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "d_review_type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "type": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "d review category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "d review genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "d review manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "d review variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "d review brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "d review class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "d review kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "d review style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "d review form": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "d review grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "d_review_type.review_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_review_type",
+			          "ConceptualProperty": "Review Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "review type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "type": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "review category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "review genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "review manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "review variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "review brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "review class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "review kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "d_review_type.sort_order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "d_review_type",
+			          "ConceptualProperty": "SortOrder"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sort order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SortOrder": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sort instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "sort direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "sort edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "sort command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "sort directive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "sort demand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "sort mandate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "f_order.delivery_days_bin_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_orders",
+			          "ConceptualProperty": "Delivery Days Bin Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "delivery days bin label": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "delivery day bin label": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "label": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "bin label": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "days bin label": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "day bin label": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.7566
+			          }
+			        },
+			        {
+			          "delivery day bin sticker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "day bin sticker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "bin sticker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "delivery day bin tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "delivery day bin decal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "day bin tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "day bin decal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "sticker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "bin tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "bin decal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "f_order.delivery_days_bin_center": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "f_orders",
+			          "ConceptualProperty": "Delivery Days Bin Center"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "delivery days bin center": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "delivery day bin center": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "center": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "bin center": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "days bin center": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "day bin center": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.7566
+			          }
+			        },
+			        {
+			          "delivery day bin midpoint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "delivery day bin epicenter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "day bin midpoint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "day bin epicenter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "bin midpoint": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "bin epicenter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "delivery day bin middle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "delivery day bin focus": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "day bin middle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "day bin focus": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "Delivery Days Bins": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "f_order_order_estimated_delivery_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "f_orders"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_order.order_estimated_delivery_date": {
-			          "Target": {
-			            "Entity": "f_order.order_estimated_delivery_date"
-			          }
-			        },
-			        "f_order.order_estimated_delivery_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "f_order.order_estimated_delivery_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_order.order_estimated_delivery_date"
-			            },
-			            "Object": {
-			              "Role": "f_order.order_estimated_delivery_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "order_estimated_delivery_dates_have_order_estimated_delivery_date_hierarchies"
-			        }
-			      ]
-			    },
-			    "f_order_order_delivered_customer_date_date_hierarchy_has_f_order_order_delivered_customer_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "f_orders"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_order.order_delivered_customer_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "f_order.order_delivered_customer_date.date_hierarchy"
-			          }
-			        },
-			        "f_order.order_delivered_customer_date.day": {
-			          "Target": {
-			            "Entity": "f_order.order_delivered_customer_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_order.order_delivered_customer_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "f_order.order_delivered_customer_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "order_delivered_customer_date_hierarchies_have_order_delivered_customer_days"
-			        }
-			      ]
-			    },
 			    "f_order_order_delivered_customer_date_date_hierarchy_has_f_order_order_delivered_customer_date_month": {
 			      "Binding": {
 			        "ConceptualEntity": "f_orders"
@@ -6345,6 +7880,699 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_customers_have_f_orders"
+			        }
+			      ]
+			    },
+			    "f_order_has_delivery_days_bin_center": {
+			      "Binding": {
+			        "ConceptualEntity": "f_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_order": {
+			          "Target": {
+			            "Entity": "f_order"
+			          }
+			        },
+			        "f_order.delivery_days_bin_center": {
+			          "Target": {
+			            "Entity": "f_order.delivery_days_bin_center"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_order"
+			            },
+			            "Object": {
+			              "Role": "f_order.delivery_days_bin_center"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_orders_have_delivery_days_bin_centers"
+			        }
+			      ]
+			    },
+			    "f_order_has_delivery_days_bin_label": {
+			      "Binding": {
+			        "ConceptualEntity": "f_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_order": {
+			          "Target": {
+			            "Entity": "f_order"
+			          }
+			        },
+			        "f_order.delivery_days_bin_label": {
+			          "Target": {
+			            "Entity": "f_order.delivery_days_bin_label"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_order"
+			            },
+			            "Object": {
+			              "Role": "f_order.delivery_days_bin_label"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_orders_have_delivery_days_bin_labels"
+			        }
+			      ]
+			    },
+			    "d_review_type_has_sort_order": {
+			      "Binding": {
+			        "ConceptualEntity": "d_review_type"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_review_type": {
+			          "Target": {
+			            "Entity": "d_review_type"
+			          }
+			        },
+			        "d_review_type.sort_order": {
+			          "Target": {
+			            "Entity": "d_review_type.sort_order"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_review_type"
+			            },
+			            "Object": {
+			              "Role": "d_review_type.sort_order"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_review_types_have_sort_orders"
+			        }
+			      ]
+			    },
+			    "d_review_type_has_review_type": {
+			      "Binding": {
+			        "ConceptualEntity": "d_review_type"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_review_type": {
+			          "Target": {
+			            "Entity": "d_review_type"
+			          }
+			        },
+			        "d_review_type.review_type": {
+			          "Target": {
+			            "Entity": "d_review_type.review_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_review_type"
+			            },
+			            "Object": {
+			              "Role": "d_review_type.review_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_review_types_have_review_types"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_reviews_by_type": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.reviews_by_type": {
+			          "Target": {
+			            "Entity": "entity__measure.reviews_by_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.reviews_by_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_reviews_by_type"
+			        }
+			      ]
+			    },
+			    "d_review_type_has_entity__measure_reviews_by_type": {
+			      "Binding": {
+			        "ConceptualEntity": "d_review_type"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_review_type": {
+			          "Target": {
+			            "Entity": "d_review_type"
+			          }
+			        },
+			        "entity__measure.reviews_by_type": {
+			          "Target": {
+			            "Entity": "entity__measure.reviews_by_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_review_type"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.reviews_by_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_review_types_have_reviews_by_type"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_negative_reviews_count": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.negative_reviews_count": {
+			          "Target": {
+			            "Entity": "entity__measure.negative_reviews_count"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.negative_reviews_count"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_negative_reviews_count"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_neutral_reviews_count": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.neutral_reviews_count": {
+			          "Target": {
+			            "Entity": "entity__measure.neutral_reviews_count"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.neutral_reviews_count"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_neutral_reviews_count"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_positive_reviews_count": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.positive_reviews_count": {
+			          "Target": {
+			            "Entity": "entity__measure.positive_reviews_count"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.positive_reviews_count"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_positive_reviews_count"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_reviews_mix_check_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.reviews_mix_check_": {
+			          "Target": {
+			            "Entity": "entity__measure.reviews_mix_check_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.reviews_mix_check_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_reviews_mix_check_"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_neutral_reviews_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.neutral_reviews_": {
+			          "Target": {
+			            "Entity": "entity__measure.neutral_reviews_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.neutral_reviews_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_neutral_reviews_"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_neutral_reviews": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.neutral_reviews": {
+			          "Target": {
+			            "Entity": "entity__measure.neutral_reviews"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.neutral_reviews"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_neutral_reviews"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_avg_delivery_days_reviewed": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.avg_delivery_days_reviewed": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_delivery_days_reviewed"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_delivery_days_reviewed"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_avg_delivery_days_reviewed"
+			        }
+			      ]
+			    },
+			    "f_order_has_entity__measure_avg_delivery_days_reviewed": {
+			      "Binding": {
+			        "ConceptualEntity": "f_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_order": {
+			          "Target": {
+			            "Entity": "f_order"
+			          }
+			        },
+			        "entity__measure.avg_delivery_days_reviewed": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_delivery_days_reviewed"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_order"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_delivery_days_reviewed"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_orders_have_avg_delivery_days_reviewed"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_review_gap_30d_vs_30d": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.review_gap_30d_vs_30d": {
+			          "Target": {
+			            "Entity": "entity__measure.review_gap_30d_vs_30d"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.review_gap_30d_vs_30d"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_review_gap_30d_vs_30d"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_avg_review__30d1": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.avg_review__30d1": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_review__30d1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_review__30d1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_avg_review__30d"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_avg_review__30d": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.avg_review__30d": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_review__30d"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_review__30d"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_avg_review__30d1"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_negative_reviews_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.negative_reviews_": {
+			          "Target": {
+			            "Entity": "entity__measure.negative_reviews_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.negative_reviews_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_negative_reviews_"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_negative_reviews": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.negative_reviews": {
+			          "Target": {
+			            "Entity": "entity__measure.negative_reviews"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.negative_reviews"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_negative_reviews"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_positive_reviews_": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.positive_reviews_": {
+			          "Target": {
+			            "Entity": "entity__measure.positive_reviews_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.positive_reviews_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_positive_reviews_"
+			        }
+			      ]
+			    },
+			    "f_review_has_entity__measure_positive_reviews": {
+			      "Binding": {
+			        "ConceptualEntity": "f_reviews"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_review": {
+			          "Target": {
+			            "Entity": "f_review"
+			          }
+			        },
+			        "entity__measure.positive_reviews": {
+			          "Target": {
+			            "Entity": "entity__measure.positive_reviews"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_review"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.positive_reviews"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_reviews_have_positive_reviews"
 			        }
 			      ]
 			    },
@@ -8034,6 +10262,72 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "f_orders_are_delivered_on_order_delivered_customer_dates"
+			        }
+			      ]
+			    },
+			    "f_order_order_delivered_customer_date_date_hierarchy_has_f_order_order_delivered_customer_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "f_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_order.order_delivered_customer_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "f_order.order_delivered_customer_date.date_hierarchy"
+			          }
+			        },
+			        "f_order.order_delivered_customer_date.day": {
+			          "Target": {
+			            "Entity": "f_order.order_delivered_customer_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_order.order_delivered_customer_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "f_order.order_delivered_customer_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "order_delivered_customer_date_hierarchies_have_order_delivered_customer_days"
+			        }
+			      ]
+			    },
+			    "f_order_order_estimated_delivery_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "f_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_order.order_estimated_delivery_date": {
+			          "Target": {
+			            "Entity": "f_order.order_estimated_delivery_date"
+			          }
+			        },
+			        "f_order.order_estimated_delivery_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "f_order.order_estimated_delivery_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_order.order_estimated_delivery_date"
+			            },
+			            "Object": {
+			              "Role": "f_order.order_estimated_delivery_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "order_estimated_delivery_dates_have_order_estimated_delivery_date_hierarchies"
 			        }
 			      ]
 			    },
