@@ -1,0 +1,151 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "dd82ee305d2a0227e0d3",
+  "position": {
+    "x": 25.555555555555554,
+    "y": 467.77777777777777,
+    "z": 5000,
+    "height": 237.77777777777777,
+    "width": 398.88888888888886,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "f_orders"
+                    }
+                  },
+                  "Property": "delivery_sla_bucket"
+                }
+              },
+              "queryRef": "f_orders.delivery_sla_bucket",
+              "nativeQueryRef": "SLA Delivery Category",
+              "active": true,
+              "displayName": "SLA Delivery Category"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_measures"
+                    }
+                  },
+                  "Property": "Delivered Orders (SLA)"
+                }
+              },
+              "queryRef": "_measures.Delivered Orders (SLA)",
+              "nativeQueryRef": "Delivered Orders (SLA)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Delivered Orders by SLA Delivery Time'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "687d185188551a998408",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_orders"
+              }
+            },
+            "Property": "delivery_sla_bucket"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1789aecbe739a4cb3ae1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Delivered Orders (SLA)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

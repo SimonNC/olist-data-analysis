@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 84,
+        "x": 234,
         "y": 0
       },
       "nodes": [
@@ -18,7 +18,7 @@
             "height": 255,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 8
         },
         {
           "location": {
@@ -30,7 +30,7 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
@@ -42,7 +42,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
@@ -54,7 +54,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
@@ -66,7 +66,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
@@ -78,7 +78,7 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 5
         },
         {
           "location": {
@@ -90,7 +90,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 7
         },
         {
           "location": {
@@ -103,7 +103,20 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1212.8155568427314,
+            "y": 36.660626231111337
+          },
+          "nodeIndex": "d_delivery_days",
+          "nodeLineageTag": "c9a7588d-9a55-4e09-828a-55883b715c2c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
         }
       ],
       "name": "All tables",

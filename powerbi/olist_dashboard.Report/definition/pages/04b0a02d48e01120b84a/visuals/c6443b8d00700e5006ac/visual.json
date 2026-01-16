@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "79133331cbe7d8e2b454",
+  "name": "c6443b8d00700e5006ac",
   "position": {
     "x": 25,
     "y": 99,
@@ -23,11 +23,11 @@
                       "Entity": "_measures"
                     }
                   },
-                  "Property": "Total Orders"
+                  "Property": "Delivered Orders"
                 }
               },
-              "queryRef": "_measures.Total Orders",
-              "nativeQueryRef": "Total Orders"
+              "queryRef": "_measures.Delivered Orders",
+              "nativeQueryRef": "Delivered Orders"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_measures"
                   }
                 },
-                "Property": "Total Orders"
+                "Property": "Delivered Orders"
               }
             },
             "direction": "Descending"
@@ -73,7 +73,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 2,
+                      "ColorId": 3,
                       "Percent": 0
                     }
                   }
@@ -126,7 +126,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Orders'"
+                  "Value": "'Delivered orders'"
                 }
               }
             },
@@ -232,5 +232,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "38e86cd09d7d5aad41a8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Delivered Orders"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

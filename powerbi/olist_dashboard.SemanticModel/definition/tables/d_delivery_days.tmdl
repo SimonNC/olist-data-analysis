@@ -1,0 +1,21 @@
+table d_delivery_days
+	lineageTag: c9a7588d-9a55-4e09-828a-55883b715c2c
+
+	column DeliveryDay
+		formatString: 0
+		lineageTag: 7a4c57fa-8ed4-4c34-96fe-cab2cfa6be0f
+		summarizeBy: sum
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_delivery_days = calculated
+		mode: import
+		source = ```
+				
+				GENERATESERIES ( 0, 220, 1 )
+				
+				```
+
+	annotation PBI_Id = b96d8790df0441da800ec7d63eeddbc0
+

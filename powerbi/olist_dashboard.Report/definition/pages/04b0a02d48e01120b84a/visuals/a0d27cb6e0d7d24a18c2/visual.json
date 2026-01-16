@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "79133331cbe7d8e2b454",
+  "name": "a0d27cb6e0d7d24a18c2",
   "position": {
-    "x": 25,
-    "y": 99,
-    "z": 1000,
-    "height": 112,
-    "width": 399,
-    "tabOrder": 0
+    "x": 858,
+    "y": 98.622950819672127,
+    "z": 3000,
+    "height": 112.26229508196721,
+    "width": 398.68852459016392,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "_measures"
                     }
                   },
-                  "Property": "Total Orders"
+                  "Property": "Avg Delivery Days"
                 }
               },
-              "queryRef": "_measures.Total Orders",
-              "nativeQueryRef": "Total Orders"
+              "queryRef": "_measures.Avg Delivery Days",
+              "nativeQueryRef": "Avg Delivery Days"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_measures"
                   }
                 },
-                "Property": "Total Orders"
+                "Property": "Avg Delivery Days"
               }
             },
             "direction": "Descending"
@@ -73,7 +73,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 2,
+                      "ColorId": 3,
                       "Percent": 0
                     }
                   }
@@ -87,24 +87,10 @@
                 }
               }
             },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
             "fontFamily": {
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -126,7 +112,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Orders'"
+                  "Value": "'Average delivery days'"
                 }
               }
             },
