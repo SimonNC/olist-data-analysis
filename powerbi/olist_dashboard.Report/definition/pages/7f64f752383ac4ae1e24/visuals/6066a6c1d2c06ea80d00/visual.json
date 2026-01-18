@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 250.46503200869668,
     "width": 1002.9733059548254,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "lineChart",
@@ -184,6 +184,13 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'TopCenter'"
                 }
               }
             }
@@ -372,6 +379,19 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dual line chart showing monthly trends in total revenue and total orders, highlighting growth and seasonality over time.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -432,6 +452,13 @@
                               "Value": "'2018-10'"
                             }
                           }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'2018-09'"
+                            }
+                          }
                         ]
                       ]
                     }
@@ -457,6 +484,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "18b4dea1b6b20d0296ed",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Total Revenue"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f25c2debc40624be40d0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Total Orders"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5d66576204b35e3681b8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_date"
+              }
+            },
+            "Property": "MonthYear"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 112.22222222222221,
     "width": 175.55555555555554,
-    "tabOrder": 0
+    "tabOrder": 9500
   },
   "visual": {
     "visualType": "card",
@@ -229,8 +229,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Displays the total number of customer reviews collected across all delivered orders'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c5d7df6b92996876b325",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Total Orders"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

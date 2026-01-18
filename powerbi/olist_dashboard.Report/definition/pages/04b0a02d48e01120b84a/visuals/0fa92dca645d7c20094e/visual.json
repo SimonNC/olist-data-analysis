@@ -4,7 +4,7 @@
   "position": {
     "x": 201.11111111111111,
     "y": 14.444444444444445,
-    "z": 3000,
+    "z": 1000,
     "height": 50,
     "width": 1055.5555555555554,
     "tabOrder": 2000
@@ -285,6 +285,21 @@
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Page navigation allowing users to switch between Sales, Delivery, and Reviews dashboard pages.\n'"
+                }
+              }
+            }
           }
         }
       ]

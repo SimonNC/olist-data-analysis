@@ -7,7 +7,7 @@
     "z": 3000,
     "height": 112.26229508196721,
     "width": 398.68852459016392,
-    "tabOrder": 2000
+    "tabOrder": 10140
   },
   "visual": {
     "visualType": "card",
@@ -215,8 +215,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Indicates the average number of days taken to deliver orders, measuring overall delivery speed.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0831a56fb78bd21620de",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Avg Delivery Days"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

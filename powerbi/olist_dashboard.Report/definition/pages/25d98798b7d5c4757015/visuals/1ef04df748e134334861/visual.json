@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 113.33333333333333,
     "width": 311.11111111111109,
-    "tabOrder": 4000
+    "tabOrder": 9250
   },
   "visual": {
     "visualType": "gauge",
@@ -205,8 +205,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Gauge showing the average customer review score on a scale from 1 to 5, summarizing overall customer satisfaction.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3d13c4529cd083451610",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Avg Review Score"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

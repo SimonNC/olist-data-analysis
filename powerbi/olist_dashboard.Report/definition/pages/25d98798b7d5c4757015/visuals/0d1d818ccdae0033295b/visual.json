@@ -7,7 +7,7 @@
     "z": 9000,
     "height": 234,
     "width": 413,
-    "tabOrder": 8000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "hundredPercentStackedBarChart",
@@ -481,6 +481,19 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stacked bar chart showing the share of positive, neutral, and negative reviews by delivery SLA category, highlighting a shift from positive to negative reviews as delivery delays increase.'"
                 }
               }
             }

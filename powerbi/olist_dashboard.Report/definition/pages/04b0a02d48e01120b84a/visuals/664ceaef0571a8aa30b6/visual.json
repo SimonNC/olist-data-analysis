@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 228.88888888888889,
     "width": 1032.2222222222222,
-    "tabOrder": 3000
+    "tabOrder": 10125
   },
   "visual": {
     "visualType": "lineChart",
@@ -467,6 +467,19 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dual-axis line chart showing monthly trends in delivered orders and on-time delivery rate from 2017 to 2018, highlighting volume growth and fluctuations in delivery reliability.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -572,6 +585,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "82389fa1027842596b51",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Delivered Orders"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f3c32d2a6030ee1dea49",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "On-Time Delivery %"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

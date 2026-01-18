@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 77.92245440270564,
     "width": 214.84333856745982,
-    "tabOrder": 5000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -394,6 +394,19 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customer state filter to analyze geographic distribution of orders and revenue.'"
                 }
               }
             }

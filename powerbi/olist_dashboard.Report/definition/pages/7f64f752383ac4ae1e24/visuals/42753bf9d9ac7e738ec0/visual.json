@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 112.26229508196721,
     "width": 398.68852459016392,
-    "tabOrder": 2000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -215,8 +215,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average revenue per order calculated from total revenue divided by total orders.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a2b2b927015dbb2b30c0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "AOV"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

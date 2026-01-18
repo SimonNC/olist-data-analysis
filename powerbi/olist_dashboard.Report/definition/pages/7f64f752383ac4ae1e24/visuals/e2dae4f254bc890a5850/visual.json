@@ -7,7 +7,7 @@
     "z": 8000,
     "height": 77.92245440270564,
     "width": 214.84333856745982,
-    "tabOrder": 6000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -399,8 +399,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Product category filter to compare sales metrics across different product categories.\n'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "be1320d044b83231d71d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_category_translation"
+              }
+            },
+            "Property": "category_english"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

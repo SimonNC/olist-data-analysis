@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.2.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 330,
+    "z": 6000,
+    "height": 316,
+    "width": 324,
+    "tabOrder": 8015
+  },
+  "objects": {
+    "categoryAxis": [],
+    "valueAxis": [],
+    "legend": [
+      {
+        "properties": {
+          "position": {
+            "expr": {
+              "Literal": {
+                "Value": "'TopCenter'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "labels": [],
+    "zoom": [],
+    "lineStyles": []
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "border": [],
+    "dropShadow": [],
+    "visualHeader": []
+  }
+}

@@ -7,7 +7,7 @@
     "z": 6000,
     "height": 218.88888888888889,
     "width": 350,
-    "tabOrder": 5000
+    "tabOrder": 9015
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -205,6 +205,19 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bar chart displaying the distribution of customer reviews by rating from 1 to 5 stars, showing a strong concentration of high ratings.'"
                 }
               }
             }

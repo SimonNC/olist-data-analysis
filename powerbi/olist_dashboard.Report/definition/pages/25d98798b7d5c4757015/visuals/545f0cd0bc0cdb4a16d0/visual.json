@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 112.22222222222221,
     "width": 207.77777777777777,
-    "tabOrder": 1000
+    "tabOrder": 9031
   },
   "visual": {
     "visualType": "card",
@@ -210,6 +210,19 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Shows the percentage of reviews rated 3 stars, indicating neutral customer feedback.'"
                 }
               }
             }

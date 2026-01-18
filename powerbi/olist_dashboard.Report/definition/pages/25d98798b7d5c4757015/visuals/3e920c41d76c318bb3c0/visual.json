@@ -7,7 +7,7 @@
     "z": 8000,
     "height": 233.33333333333331,
     "width": 350,
-    "tabOrder": 7000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -273,6 +273,19 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scatter plot showing the relationship between delivery time SLA categories and average review score, illustrating decreasing satisfaction as delivery times increase.'"
                 }
               }
             }

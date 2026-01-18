@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 112,
     "width": 399,
-    "tabOrder": 1000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "card",
@@ -215,8 +215,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total revenue generated from all orders in the selected period, expressed in US dollars.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6204e7c7011133a2e449",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Total Revenue"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

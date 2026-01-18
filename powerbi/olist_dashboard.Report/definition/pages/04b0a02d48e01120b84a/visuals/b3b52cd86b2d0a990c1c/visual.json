@@ -7,7 +7,7 @@
     "z": 10000,
     "height": 94.444444444444443,
     "width": 192.22222222222223,
-    "tabOrder": 9000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -172,8 +172,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Displays the percentage of delivered orders that exceeded 30 days, highlighting late delivery risk.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "da87b620e66a40268dc8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Delivered > 30d %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

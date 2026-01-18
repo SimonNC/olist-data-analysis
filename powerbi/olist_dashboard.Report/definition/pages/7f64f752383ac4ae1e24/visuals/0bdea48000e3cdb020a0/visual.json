@@ -7,7 +7,7 @@
     "z": 9000,
     "height": 231.5410073680396,
     "width": 613.36103394129725,
-    "tabOrder": 7000
+    "tabOrder": 1750
   },
   "visual": {
     "visualType": "barChart",
@@ -239,8 +239,53 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bar chart ranking product categories by total revenue, showing the categories that contribute most to overall sales.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f1952b10060ec2d32108",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "d_customers"
+              }
+            },
+            "Property": "customer_state"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1406ed7b20c9779b4802",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Total Orders"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

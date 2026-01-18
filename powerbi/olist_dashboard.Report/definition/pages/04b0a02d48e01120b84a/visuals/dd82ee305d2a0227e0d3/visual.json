@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 237.77777777777777,
     "width": 398.88888888888886,
-    "tabOrder": 4000
+    "tabOrder": 10109
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -160,8 +160,53 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dual-axis line chart showing monthly trends in delivered orders and on-time delivery rate from 2017 to 2018, highlighting volume growth and fluctuations in delivery reliability.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ec315eaa9704553cc333",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "f_orders"
+              }
+            },
+            "Property": "delivery_sla_bucket"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "51753fcbbdb4e5093b4c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Delivered Orders (SLA)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

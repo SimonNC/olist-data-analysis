@@ -4,10 +4,10 @@
   "position": {
     "x": 823,
     "y": 474,
-    "z": 9001,
+    "z": 10000,
     "height": 233,
     "width": 415,
-    "tabOrder": 8001
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "lineChart",
@@ -341,6 +341,19 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stacked bar chart showing the share of positive, neutral, and negative reviews by delivery SLA category, highlighting a shift from positive to negative reviews as delivery delays increase.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -442,67 +455,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "48bed5d9357824611296",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Avg Review Score"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5ad07927a4a45a1a4371",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Total Reviews"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fadd9a2cc04eccd6cb0d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "f_orders"
-                  }
-                },
-                "Property": "Delivery Days Bin Label"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8f88ce2098085bb680c5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "f_orders"
-              }
-            },
-            "Property": "Delivery Days Bin Center"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

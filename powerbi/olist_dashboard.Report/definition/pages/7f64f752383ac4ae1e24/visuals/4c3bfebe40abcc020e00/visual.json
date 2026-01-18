@@ -7,7 +7,7 @@
     "z": 6000,
     "height": 79.035632322744291,
     "width": 215.95651648749848,
-    "tabOrder": 4000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "slicer",
@@ -449,6 +449,19 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Year filter to analyze sales performance over time.'"
                 }
               }
             }

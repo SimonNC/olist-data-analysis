@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 112,
     "width": 399,
-    "tabOrder": 1000
+    "tabOrder": 10156
   },
   "visual": {
     "visualType": "card",
@@ -215,8 +215,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Displays the total number of orders successfully delivered, reflecting overall delivery volume within the selected filters.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2462b1b43cab960c13cb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "On-Time Delivery %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
