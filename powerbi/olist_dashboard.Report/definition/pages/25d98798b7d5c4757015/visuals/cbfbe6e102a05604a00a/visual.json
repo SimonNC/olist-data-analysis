@@ -7,7 +7,7 @@
     "z": 3000,
     "height": 112.22222222222221,
     "width": 207.77777777777777,
-    "tabOrder": 2000
+    "tabOrder": 9125
   },
   "visual": {
     "visualType": "card",
@@ -215,8 +215,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Shows the percentage of reviews rated 4 or 5 stars, representing satisfied and highly satisfied customers.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1d03dc6c7ac85d9ab502",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Positive Reviews %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

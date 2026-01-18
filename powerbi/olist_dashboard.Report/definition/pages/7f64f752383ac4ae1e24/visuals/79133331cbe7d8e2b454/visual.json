@@ -7,7 +7,7 @@
     "z": 1000,
     "height": 112,
     "width": 399,
-    "tabOrder": 0
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
@@ -229,8 +229,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total number of customer orders recorded in the selected period.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1f01d648786860a8804a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Total Orders"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

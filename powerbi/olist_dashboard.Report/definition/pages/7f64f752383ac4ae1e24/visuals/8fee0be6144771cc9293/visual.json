@@ -7,7 +7,7 @@
     "z": 11000,
     "height": 69.245901639344268,
     "width": 175.21311475409837,
-    "tabOrder": 0
+    "tabOrder": 2500
   },
   "visual": {
     "visualType": "actionButton",
@@ -123,6 +123,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'PageNavigation'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Olist logo and navigation header for the sales dashboard.'"
                 }
               }
             }

@@ -7,7 +7,7 @@
     "z": 8000,
     "height": 97.777777777777771,
     "width": 192.22222222222223,
-    "tabOrder": 7000
+    "tabOrder": 10015
   },
   "visual": {
     "visualType": "cardVisual",
@@ -156,8 +156,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Displays the cumulative percentage of delivered orders completed within 15 days, representing standard SLA compliance.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ec39b3e93c41109b742d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Delivered ≤ 15d %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

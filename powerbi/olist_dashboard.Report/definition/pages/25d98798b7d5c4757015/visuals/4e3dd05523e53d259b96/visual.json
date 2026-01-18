@@ -7,7 +7,7 @@
     "z": 4000,
     "height": 112.22222222222221,
     "width": 207.77777777777777,
-    "tabOrder": 3000
+    "tabOrder": 9062
   },
   "visual": {
     "visualType": "card",
@@ -215,8 +215,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Shows the percentage of reviews rated 3 stars, indicating neutral customer feedback.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "88747bd58ed65140ad13",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Neutral Reviews %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

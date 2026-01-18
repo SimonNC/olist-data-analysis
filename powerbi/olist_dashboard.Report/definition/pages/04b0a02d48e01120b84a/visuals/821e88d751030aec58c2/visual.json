@@ -4,10 +4,10 @@
   "position": {
     "x": 25.555555555555554,
     "y": 225.55555555555554,
-    "z": 11000,
+    "z": 3000,
     "height": 114.44444444444444,
     "width": 190,
-    "tabOrder": 10000
+    "tabOrder": 10500
   },
   "visual": {
     "visualType": "slicer",
@@ -449,6 +449,19 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Filter allowing users to select one or multiple years to update all delivery performance metrics accordingly.'"
                 }
               }
             }

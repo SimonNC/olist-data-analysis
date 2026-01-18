@@ -7,7 +7,7 @@
     "z": 7000,
     "height": 218.88888888888889,
     "width": 851.11111111111109,
-    "tabOrder": 6000
+    "tabOrder": 9007
   },
   "visual": {
     "visualType": "lineChart",
@@ -316,6 +316,19 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Line chart showing the yearly evolution of positive, neutral, and negative review counts, highlighting the growth of positive reviews over time.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -477,62 +490,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "55c65befd569570d8eac",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Negative Reviews %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1ae2c70570733984debe",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Neutral Reviews %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fd39c4d84d0eb9b7435d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_measures"
-              }
-            },
-            "Property": "Positive Reviews %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "aa1c3a30c87020870ebd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "d_date"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

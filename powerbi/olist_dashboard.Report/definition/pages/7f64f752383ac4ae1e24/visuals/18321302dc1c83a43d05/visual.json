@@ -11,6 +11,21 @@
   },
   "visualGroup": {
     "displayName": "Group 1",
-    "groupMode": "ScaleMode"
+    "groupMode": "ScaleMode",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Olist logo and navigation header for the sales dashboard.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }

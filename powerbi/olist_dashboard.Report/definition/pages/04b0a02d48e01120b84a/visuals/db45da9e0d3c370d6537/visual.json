@@ -7,7 +7,7 @@
     "z": 9000,
     "height": 94.444444444444443,
     "width": 192.22222222222223,
-    "tabOrder": 8000
+    "tabOrder": 10007
   },
   "visual": {
     "visualType": "cardVisual",
@@ -156,8 +156,39 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Displays the cumulative percentage of delivered orders completed within 30 days, representing overall SLA adherence.'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fcc43b925368079a7761",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_measures"
+              }
+            },
+            "Property": "Delivered ≤ 30d %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

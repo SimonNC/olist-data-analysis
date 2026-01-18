@@ -289,6 +289,21 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Page navigation allowing users to switch between Sales, Delivery, and Reviews dashboard pages.\n'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "parentGroupName": "18321302dc1c83a43d05",
