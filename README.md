@@ -1,260 +1,155 @@
-
-# Olist E-Commerce Analytics — End-to-End Data & BI Project
+# Olist E-Commerce Analytics - End-to-End Data & BI Project
 
 ## 🎯 Executive Summary
-This project is a **complete end-to-end data analytics case study** based on the public **[Olist Brazilian E-Commerce Dataset (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)**.
-It demonstrates my ability to **transform raw data into business-ready insights**, combining **Python data engineering**, **analytical data modeling**, and **Power BI dashboarding**.
 
-Target audience:
-- Recruiters
-- Analytics / BI Managers
-- Data Teams
+**End-to-end data analytics project** demonstrating the full pipeline from raw data to decision-ready **Power BI dashboards**. Built on the public [Olist Brazilian E-Commerce Dataset (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), this project covers **data preparation** (Python), **KPI design**, **star-schema modeling**, and **business storytelling** through interactive dashboards.
+
+> **Key insight: deliveries exceeding 30 days generate 64% of negative reviews.** Fast deliveries (≤7 days) account for 86% of positive reviews.
+
+**Target audience**: Recruiters, Analytics/BI Managers, Data Teams.
 
 ---
 
 ## 🧠 Business Questions Addressed
-- How does sales performance evolve over time?
-- Which product categories and regions generate the most revenue?
+
+- How does sales performance evolve over time, by category and by region?
 - How efficient is delivery performance against SLA commitments?
-- How strongly do delivery delays impact customer satisfaction?
+- What is the relationship between delivery delays and customer satisfaction?
+- Where should the business prioritize to reduce negative reviews?
+
+---
+
+## 📸 Dashboards
+
+### Customer Reviews & Satisfaction
+
+**Purpose**: Identify the drivers of customer satisfaction and quantify the impact of delivery performance on review scores.
+
+[![Reviews Dashboard](screenshots/reviews_dashboard.jpg)](screenshots/reviews_dashboard.jpg)
+
+**KPIs**: Review score distribution, review mix over time, delivery delay vs. satisfaction correlation.
+
+---
+
+### Sales Performance
+
+**Purpose**: Monitor commercial performance, revenue trends, and identify top-performing categories and regions.
+
+[![Sales Dashboard](screenshots/sales_dashboard.jpg)](screenshots/sales_dashboard.jpg)
+
+**KPIs**: Total Revenue, Order Volume, Average Order Value (AOV), monthly trends, top categories and states.
+
+---
+
+### Delivery & Logistics
+
+**Purpose**: Track operational performance, SLA reliability, and identify delivery bottlenecks.
+
+[![Delivery Dashboard](screenshots/delivery_dashboard.jpg)](screenshots/delivery_dashboard.jpg)
+
+**KPIs**: On-time delivery rate, SLA distribution, cumulative delivery performance, SLA tipping points.
 
 ---
 
 ## 🏗️ Project Architecture
 
-The repository is organized to reflect a **clear separation between data preparation, documentation, analytics notebooks, BI assets, and presentation artifacts**.
-
-
-
 ```
 .
-├── data_cleaned/                 # Analytics-ready datasets (CSV + Parquet)
-│   ├── customers_clean.csv
-│   ├── customers_clean.parquet
-│   ├── orders_clean.csv
-│   ├── orders_clean.parquet
-│   ├── order_items_clean.csv
-│   ├── order_items_clean.parquet
-│   ├── products_clean.csv
-│   ├── products_clean.parquet
-│   ├── reviews_clean.csv
-│   ├── reviews_clean.parquet
-│   ├── translation_clean.csv
-│   └── translation_clean.parquet
-│
-├── docs/                         # Project documentation
-│   ├── data_models.md            # Analytical data model documentation
-│   └── metrics.md                # Business metrics & KPI definitions
-│
-├── notebooks/                    # Python data preparation pipeline
-│   └── main.ipynb                # Data cleaning, validation & feature engineering
-│
-├── powerbi/                      # Power BI project (PBIP format)
-│   ├── assets/
-│   ├── olist_dashboard.Report
-│   ├── olist_dashboard.SemanticModel
-│   ├── theme/
-│   └── olist_dashboard.pbip
-│
-├── screenshots/                  # Visual assets for README & portfolio
-│   ├── data_model.jpg
-│   ├── sales_dashboard.jpg
-│   ├── delivery_dashboard.jpg
-│   ├── reviews_dashboard.jpg
-│   └── tech_stack.png
-│
-├── README.md                     # Project overview (this document)
+├── data_cleaned/              # Analytics-ready datasets (CSV + Parquet)
+├── docs/
+│   ├── data_models.md         # Analytical data model documentation
+│   └── metrics.md             # Business metrics & KPI definitions
+├── notebooks/
+│   └── main.ipynb             # Python data preparation pipeline
+├── powerbi/                   # Power BI project (PBIP format)
+├── screenshots/               # Dashboard screenshots
+├── README.md
 └── .gitignore
-
 ```
 
 ---
 
-## 🧰 Tech Stack
+## 🛠️ Technical Stack
 
-**Data Processing**
-- Python (pandas, numpy)
-- Jupyter Notebook
-
-**Data Storage**
-- CSV (compatibility)
-- Parquet (analytics & performance)
-
-**BI & Visualization**
-- Power BI (Import mode)
-- Star-schema inspired data model
-
----
-![Tech Stack](screenshots/tech_stack.png)
----
-
-## 🧪 Python — Data Preparation & Quality
-
-Each dataset follows a structured and reproducible pipeline:
-
-1. **Data Profiling**
-   - Schema & data types
-   - Missing values analysis
-   - Business relevance filtering
-
-2. **Data Cleaning**
-   - Date normalization
-   - Status harmonization
-   - Numeric validation
-   - SLA computation (delivery time buckets)
-
-3. **Data Quality Controls**
-   - Primary key uniqueness
-   - Mandatory fields
-   - Business rules (prices ≥ 0, scores ∈ [1,5])
-   - Referential integrity checks
-
-4. **Export**
-   - Clean datasets exported in **Parquet (primary)** and **CSV (fallback)**
-
-Pipeline stops automatically if any quality rule fails.
+| Layer | Tools & Approach |
+|---|---|
+| **Data Preparation** | Python (Pandas, NumPy), Jupyter Notebook |
+| **Data Quality** | Automated checks: PK uniqueness, mandatory fields, business rules (prices ≥ 0, scores 1-5), referential integrity. Pipeline stops on failure. |
+| **Data Storage** | Parquet (primary, performance), CSV (fallback, compatibility) |
+| **Data Modeling** | Star-schema (fact/dimension), explicit Date dimension, single-direction relationships |
+| **BI & Visualization** | Power BI (Import mode), DAX measures centralized by domain, parameterized folder path |
 
 ---
 
-## 📊 Power BI — Data Modeling
+## 📊 Power BI Data Model
 
-- Import mode (dataset < 20MB)
-- Parameterized folder path (portable project)
-- Star-schema inspired model
-- Explicit Date dimension
-- Single-direction relationships
-- Measures centralized by domain
+[![Data Model](screenshots/data_model.jpg)](screenshots/data_model.jpg)
 
----
-![Data Model](screenshots/data_model.jpg)
----
-
-## 📈 Dashboards Overview
-
-### Sales
-- Total Revenue, Orders, AOV
-- Monthly trends
-- Top categories & states
-
-### Delivery
-- Delivered orders & on-time rate
-- SLA distribution
-- Cumulative delivery performance
-- SLA tipping points
-
-### Reviews
-- Review score distribution
-- Review mix over time
-- Correlation between delivery delays & satisfaction
+- **Star-schema** inspired model optimized for slicing and aggregation
+- Explicit **Date dimension** for time intelligence
+- Single-direction relationships for predictable filter context
+- **DAX measures** centralized by business domain (Sales, Delivery, Reviews)
 
 ---
 
-## 📸 Dashboard Screenshots
+## 🧪 Python Data Preparation Pipeline
 
-Below are representative screenshots of the three Power BI dashboards delivered in this project.
-They illustrate the **decision-oriented design**, **KPI structuring**, and **business storytelling** approach.
+Each dataset follows a structured, reproducible pipeline:
 
----
-
-### Sales Performance Dashboard
-**Purpose**: Commercial performance monitoring and revenue analysis.
-
-![Sales Dashboard](screenshots/sales_dashboard.jpg)
-
-Key focus:
-- Revenue & order trends
-- Top categories and regions
-- Executive-level KPIs (Revenue, Orders, AOV)
+1. **Data Profiling** - Schema, data types, missing values analysis, business relevance filtering
+2. **Data Cleaning** - Date normalization, status harmonization, numeric validation, SLA computation (delivery time buckets)
+3. **Data Quality Controls** - Automated checks with pipeline halt on failure
+4. **Export** - Clean datasets in Parquet (primary) and CSV (fallback)
 
 ---
-
-### Delivery & Logistics Dashboard
-**Purpose**: Operational performance and SLA reliability.
-
-![Delivery Dashboard](screenshots/delivery_dashboard.jpg)
-
-Key focus:
-- On-time delivery rate
-- SLA distribution
-- Delivery bottlenecks
-- Cumulative delivery performance
-
----
-
-### Customer Reviews Dashboard
-**Purpose**: Customer satisfaction and experience analysis.
-
-![Reviews Dashboard](screenshots/reviews_dashboard.jpg)
-
-Key focus:
-- Review score distribution
-- Review mix evolution
-- Strong correlation between delivery delays and customer satisfaction
-
 
 ## 💡 Key Insights
-- A sharp satisfaction drop occurs after **~25–30 days delivery time**
-- Late deliveries (>30 days) generate **64% negative reviews**
-- Fast deliveries (≤7 days) account for **86% positive reviews**
-- Sales are heavily concentrated in a small number of states & categories
+
+| Finding | Business Impact |
+|---|---|
+| Satisfaction drops sharply after ~25-30 days delivery time | Critical SLA threshold identified |
+| Deliveries >30 days generate **64% of negative reviews** | Clear root cause for dissatisfaction |
+| Deliveries ≤7 days generate **86% of positive reviews** | Fast delivery = strong satisfaction lever |
+| Sales concentrated in a small number of states & categories | Prioritization opportunity for logistics |
 
 ---
 
 ## 💼 Business Recommendations
 
-Based on observed patterns across sales performance, delivery SLAs, and customer reviews, the following actions are recommended to improve operational efficiency and customer satisfaction:
+Based on the analysis of sales performance, delivery SLAs, and customer reviews:
 
-- **Anticipate delivery delays before they impact satisfaction**
-  - Flag and prioritize orders approaching **20 days of delivery time**
-  - Act before the critical **25–30 day threshold** where satisfaction drops sharply
-
-- **Refine SLA commitments by region**
-  - Adjust promised delivery dates for regions outside major hubs (e.g. outside SP / RJ)
-  - Align customer expectations with actual delivery performance to reduce frustration-driven negative reviews
-
-- **Focus on structurally slow product categories**
-  - Identify categories with consistently longer delivery times (e.g. bulky or furniture-related items)
-  - Investigate supplier lead times, logistics constraints, and fulfillment strategies at category level
-
-- **Implement proactive customer communication**
-  - Trigger automated notifications for orders delayed beyond **25 days**
-  - Use early status updates, apologies, or compensation to mitigate dissatisfaction before delivery completion
-
-- **Use delivery performance as a CX leading indicator**
-  - Monitor delivery SLA metrics alongside review scores
-  - Treat logistics KPIs as early warning signals for brand perception and customer experience issues
+- **Flag orders approaching 20 days** of delivery time and act before the critical 25-30 day threshold
+- **Adjust SLA commitments by region** - align customer expectations with actual delivery performance outside major hubs
+- **Investigate structurally slow categories** (bulky items, furniture) at supplier and fulfillment level
+- **Trigger proactive customer communication** for orders delayed beyond 25 days
+- **Use delivery performance as a CX leading indicator** - monitor logistics KPIs alongside review scores as early warning signals
 
 ---
 
+## 🎯 Skills Demonstrated
 
-## 🎯 Why This Project Matters
-This project reflects **real-world analytics practices**:
-- Production-ready data preparation
-- Business-driven KPIs
-- Clean BI modeling
-- Strong storytelling focus
+This project demonstrates the following competencies, aligned with **Data Analyst** market requirements:
 
-It is designed to be **readable, auditable, and scalable**, not just visually appealing.
+| Competency | How it is demonstrated |
+|---|---|
+| **Power BI** (DAX, Power Query, star-schema) | Full dashboard suite with parameterized model |
+| **KPI design & dashboarding** | Revenue, delivery, satisfaction KPIs structured by domain |
+| **Data visualization & storytelling** | Insight-driven dashboards designed for decision-makers |
+| **Python data preparation** | Reproducible pipeline with automated quality controls |
+| **SQL-ready data modeling** | Star-schema with controlled grains and referential integrity |
+| **Business needs analysis** | Questions framed from the operational perspective, not the tool |
 
 ---
 
 ## 👤 Author
 
-**Simon Jorite**  
-Data Analyst | Analytics Engineer  
-Microsoft Power BI Certified (PL-300)
+**Simon Jorite**
+Data Analyst - [Microsoft Certified Power BI Data Analyst (PL-300)](https://learn.microsoft.com/en-us/users/simonjorite-4846/credentials/b2cc3310a92a9302)
 
-Data Analyst with a strong background in **operations, logistics, finance, and e-commerce**, specialized in transforming complex datasets into **reliable KPIs and decision-oriented dashboards**.
+15 years of experience in finance, operations, and e-commerce. I transform complex datasets into reliable KPIs and decision-ready dashboards.
 
-Experienced across the full analytics lifecycle:
-- Data preparation & quality (Python, SQL)
-- Analytical modeling (star schema, BI-ready datasets)
-- Business KPI design and storytelling in Power BI
-
-This project reflects a **production-oriented analytics approach**, aligned with real business constraints and stakeholder expectations.
-
-📍 Location: Lyon - France (Open to Hybrid / Remote projects)  
-🔗 GitHub: https://github.com/SimonNC  
-🔗 LinkedIn: www.linkedin.com/in/simonjorite  
-📧 Contact: simon.jorite@gmail.com
-
+- GitHub: [github.com/SimonNC](https://github.com/SimonNC)
+- LinkedIn: [linkedin.com/in/simonjorite](https://www.linkedin.com/in/simonjorite)
+- Email: simon.jorite@gmail.com
+- Location: Lyon, France (Open to hybrid / remote)
+- Scheduling: [Book a 30-min exchange](https://calendly.com/simon-jorite/echange-da)
