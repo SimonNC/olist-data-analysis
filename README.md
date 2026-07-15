@@ -6,7 +6,6 @@
 
 > **Key insight: deliveries exceeding 30 days generate 64% of negative reviews.** Fast deliveries (≤7 days) account for 86% of positive reviews.
 
-**Target audience**: Recruiters, Analytics/BI Managers, Data Teams.
 
 ---
 
