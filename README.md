@@ -8,6 +8,7 @@
 
 > **Enseignement clé : les livraisons dépassant 30 jours génèrent 64% des avis négatifs.** Les livraisons rapides (≤7 jours) représentent 86% des avis positifs.
 
+📥 **[Ouvrir le dashboard dans Power BI](https://raw.githubusercontent.com/SimonNC/olist-data-analysis/main/exports/olist_dashboard.pbix)** — fichier `.pbix` prêt à l'emploi, sans configuration.
 
 ---
 

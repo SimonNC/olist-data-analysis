@@ -8,6 +8,7 @@
 
 > **Key insight: deliveries exceeding 30 days generate 64% of negative reviews.** Fast deliveries (≤7 days) account for 86% of positive reviews.
 
+📥 **[Open the dashboard in Power BI](https://raw.githubusercontent.com/SimonNC/olist-data-analysis/main/exports/olist_dashboard.pbix)** — ready-to-use `.pbix` file, no setup required.
 
 ---
 
