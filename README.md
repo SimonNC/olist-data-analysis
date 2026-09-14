@@ -64,6 +64,7 @@
 │   └── main.ipynb             # Pipeline Python de préparation des données
 ├── powerbi/                   # Projet Power BI (format PBIP)
 ├── screenshots/               # Captures d'écran des dashboards
+├── README.en.md
 ├── README.md
 └── .gitignore
 ```
@@ -89,7 +90,7 @@
 - Modèle inspiré du **star-schema**, optimisé pour le découpage et l'agrégation
 - Dimension **Date** explicite pour l'intelligence temporelle
 - Relations à sens unique pour un contexte de filtre prévisible
-- **Mesures DAX** centralisées par domaine métier (Ventes, Livraison, Avis)
+- **Mesures DAX** centralisées par domaine métier (Sales, Delivery, Reviews)
 
 ---
 

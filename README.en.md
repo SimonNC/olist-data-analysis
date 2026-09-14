@@ -64,6 +64,7 @@
 │   └── main.ipynb             # Python data preparation pipeline
 ├── powerbi/                   # Power BI project (PBIP format)
 ├── screenshots/               # Dashboard screenshots
+├── README.en.md
 ├── README.md
 └── .gitignore
 ```
