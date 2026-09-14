@@ -1,6 +1,6 @@
 # Olist E-Commerce Analytics - End-to-End Data & BI Project
 
-[🇫🇷 Version française](README.md)
+[🇫🇷 Version française](README.md) · [📅 Book a call](https://cal.clixius.com/simon/echange)
 
 ## 🎯 Executive Summary
 
@@ -164,4 +164,4 @@ Data Analyst - [Microsoft Certified Power BI Data Analyst (PL-300)](https://lear
 - LinkedIn: [linkedin.com/in/simonjorite](https://www.linkedin.com/in/simonjorite)
 - Email: simon.jorite@gmail.com
 - Location: Lyon, France (Open to hybrid / remote)
-- Scheduling: [Book a 30-min exchange](https://calendly.com/simon-jorite/echange-da)
+- Scheduling: [Book a 30-min exchange](https://cal.clixius.com/simon/echange)
