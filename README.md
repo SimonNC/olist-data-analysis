@@ -140,6 +140,15 @@ This project demonstrates the following competencies, aligned with **Data Analys
 
 ---
 
+## 🔗 Related Projects
+
+This project complements the portfolio alongside:
+
+- 👉 [Olist Analytics Engineering Pipeline](https://github.com/SimonNC/olist-dbt-duckdb) (SQL + dbt)
+- 👉 [Customer Churn Prediction - Telco](https://github.com/SimonNC/telco-customer-churn-prediction) (Python + ML + Streamlit)
+
+---
+
 ## 👤 Author
 
 **Simon Jorite**
